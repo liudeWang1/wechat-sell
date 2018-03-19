@@ -1,17 +1,13 @@
-<#list orderDTOPage.content as orderDTO>
-    ${orderDTO.orderId}<br>
-</#list>
-<#--
 <html>
 <#include "../common/header.ftl">
 
 <body>
 <div id="wrapper" class="toggled">
 
-    &lt;#&ndash;边栏sidebar&ndash;&gt;
-    <#include "../common/nav.ftl">
+<#--边栏sidebar-->
+<#include "../common/nav.ftl">
 
-    &lt;#&ndash;主要内容content&ndash;&gt;
+<#--主要内容content-->
     <div id="page-content-wrapper">
         <div class="container-fluid">
             <div class="row clearfix">
@@ -54,7 +50,7 @@
                     </table>
                 </div>
 
-            &lt;#&ndash;分页&ndash;&gt;
+            <#--分页-->
                 <div class="col-md-12 column">
                     <ul class="pagination pull-right">
                     <#if currentPage lte 1>
@@ -84,8 +80,8 @@
 
 </div>
 
-&lt;#&ndash;弹窗&ndash;&gt;
-<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<#--弹窗-->
+<#--<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -103,14 +99,14 @@
             </div>
         </div>
     </div>
-</div>
+</div-->>
 
-&lt;#&ndash;播放音乐&ndash;&gt;
-<audio id="notice" loop="loop">
+<#--播放音乐-->
+<#--<audio id="notice" loop="loop">
     <source src="/sell/mp3/song.mp3" type="audio/mpeg" />
-</audio>
+</audio>-->
 
-<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<#--<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script>
     var websocket = null;
@@ -144,7 +140,7 @@
         websocket.close();
     }
 
-</script>
+</script>-->
 
 </body>
-</html>-->
+</html>
