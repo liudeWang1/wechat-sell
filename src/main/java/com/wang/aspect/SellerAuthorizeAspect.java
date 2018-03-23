@@ -29,11 +29,15 @@ public class SellerAuthorizeAspect {
     @Autowired
     private StringRedisTemplate redisTemplate;
 
+/*
     @Pointcut("execution(public * com.wang.controller.Seller*.*(..))"+
             "&&!execution(public * com.wang.controller.SellerUserController.*(..))")
+*/
     public void verify(){}
 
+/*
     @Before("verify()")
+*/
     public void doVerify(){
         ServletRequestAttributes attributes= (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request=attributes.getRequest();

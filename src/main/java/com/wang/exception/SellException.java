@@ -1,10 +1,12 @@
 package com.wang.exception;
 
 import com.wang.enums.ResultEnum;
+import lombok.Data;
 
 /**
  * Created by 汪刘德 on 2018/3/12.
  */
+@Data
 public class SellException extends RuntimeException {
 
     private Integer code;

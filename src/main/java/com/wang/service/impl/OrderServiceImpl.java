@@ -15,6 +15,7 @@ import com.wang.repository.OrderMasterRepository;
 import com.wang.service.OrderService;
 import com.wang.service.PayService;
 import com.wang.service.ProductService;
+import com.wang.service.WebSocket;
 import com.wang.utils.KeyUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -49,6 +50,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Autowired
     private PayService payService;
+
+    @Autowired
+    private WebSocket webSocket;
 
     @Override
     @Transactional   /**添加事务*/
@@ -89,6 +93,8 @@ public class OrderServiceImpl implements OrderService {
         ).collect(Collectors.toList());
         productService.decreaseStock(cartDTOList);
 
+        //websocket发送消息
+        webSocket.sendMessage(orderDTO.getOrderId());
 
         return orderDTO;
     }
